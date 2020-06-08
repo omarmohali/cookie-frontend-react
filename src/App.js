@@ -1,9 +1,10 @@
 import React from 'react';
+import SignupView from "./Signup/SignupView";
 
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <SignupView />
     </div>
   );
 }
