@@ -18,6 +18,23 @@ input::placeholder {
     color:#9BA1A3;
 }
 
+button {
+    margin-top: 25px;
+    width: 180px;
+    height: 55px;
+    border-radius: 27.5px;
+    border: none;
+    background-color: #3BB435;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
 hr {
     margin: 0;
 }
@@ -37,7 +54,5 @@ hr {
     height: 210px;
     margin: auto;
     border-radius: 10px;
-    /* padding-left: 15px;
-    padding-right: 15px; */
 }
 

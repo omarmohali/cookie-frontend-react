@@ -17,6 +17,7 @@ function SignupView() {
                 <hr/>
                 <input type="password" placeholder="Password"/>
             </div>
+            <button>Sign Up</button>
         </div>;
 }
 
