@@ -1,6 +1,7 @@
 import React from "react";
 import cookieLogo from "./../resources/images/cookie-logo.png"
 import "./SignupView.css";
+import registerUser from "./../network-layer/registration-network.js"
 
 function SignupView() {
 
@@ -26,10 +27,7 @@ function SignupView() {
     }
 
     function signupButtonClicked() {
-        console.log(firstName)
-        console.log(lastName)
-        console.log(email)
-        console.log(password)
+        registerUser(firstName, lastName, email, password);
     }
 
     return <div className="container">
