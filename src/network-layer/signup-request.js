@@ -1,7 +1,14 @@
 import axios from "axios";
+import networkConfiguration from "./network-configuration";
 
+async function signup(firstName, lastName, email, password) {
 
-async function registerUser(firstName, lastName, email, password) {
+try {
+    var response = await networkConfiguration("users", { firstName, lastName, email, password })
+    console.log(response.data);
+} catch (err) {
+    console.log(err);
+}
 
 
 //     var xhttp = new XMLHttpRequest();
@@ -19,13 +26,13 @@ async function registerUser(firstName, lastName, email, password) {
 
 
     // https://cookie-social.herokuapp.com/users/5edb9f2e7129c600047ee2af
-    try {
-        var result = await axios.get("http://localhost:3001/users/5edb9f2e7129c600047ee2af")
-        console.log(result.data.email);
-    } catch (err) {
-        console.log("Errorrrrrorororor")
-        console.log(err);
-    }
+    // try {
+    //     var result = await axios.get("http://localhost:3001/users/5edb9f2e7129c600047ee2af")
+    //     console.log(result.data.email);
+    // } catch (err) {
+    //     console.log("Errorrrrrorororor")
+    //     console.log(err);
+    // }
     
 
     // console.log(firstName)
@@ -35,4 +42,4 @@ async function registerUser(firstName, lastName, email, password) {
 }
 
 
-export default registerUser;
+export default signup;

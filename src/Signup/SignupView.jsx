@@ -1,7 +1,7 @@
 import React from "react";
 import cookieLogo from "./../resources/images/cookie-logo.png"
 import "./SignupView.css";
-import registerUser from "./../network-layer/registration-network.js"
+import signup from "./../network-layer/signup-request"
 
 function SignupView() {
 
@@ -15,19 +15,19 @@ function SignupView() {
     }
 
     function lastNameChanged(event) {
-        setLastName(event.target.value)
+        setLastName(event.target.value);
     }
 
     function emailChanged(event) {
-        setEmail(event.target.value)
+        setEmail(event.target.value);
     }
 
     function passwordChanged(event) {
-        setPassword(event.target.value)
+        setPassword(event.target.value);
     }
 
     function signupButtonClicked() {
-        registerUser(firstName, lastName, email, password);
+        signup(firstName, lastName, email, password);
     }
 
     return <div className="container">
