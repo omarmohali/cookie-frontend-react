@@ -1,0 +1,43 @@
+
+input {
+    display: block;
+    width: 90%;
+    height: 48px;
+    background: transparent;
+    font-size: 16px;
+    margin: auto;
+    border: none;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    color:#9BA1A3;
+}
+
+hr {
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.image {
+    height: 300px;
+    width: 300px;
+}
+
+.fields-container {
+    background-color: #EDEDED;
+    width: 350px;
+    height: 210px;
+    margin: auto;
+    border-radius: 10px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
