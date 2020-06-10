@@ -4,20 +4,46 @@ import "./SignupView.css";
 
 function SignupView() {
 
+    var [firstName, setFirstName] = React.useState("");
+    var [lastName, setLastName] = React.useState("");
+    var [email, setEmail] = React.useState("");
+    var [password, setPassword] = React.useState("");
 
+    function firstNameChanged(event) {
+        setFirstName(event.target.value)
+    }
+
+    function lastNameChanged(event) {
+        setLastName(event.target.value)
+    }
+
+    function emailChanged(event) {
+        setEmail(event.target.value)
+    }
+
+    function passwordChanged(event) {
+        setPassword(event.target.value)
+    }
+
+    function signupButtonClicked() {
+        console.log(firstName)
+        console.log(lastName)
+        console.log(email)
+        console.log(password)
+    }
 
     return <div className="container">
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <div className="fields-container">
-                <input type="text" placeholder="First Name"/>
+                <input onChange= { firstNameChanged } type="text" placeholder="First Name"/>
                 <hr/>
-                <input type="text" placeholder="Last Name (Optional)"/>
+                <input onChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
                 <hr/>
-                <input type="email" placeholder="Email"/>
+                <input onChange= { emailChanged } type="email" placeholder="Email"/>
                 <hr/>
-                <input type="password" placeholder="Password"/>
+                <input onChange= { passwordChanged } type="password" placeholder="Password"/>
             </div>
-            <button>Sign Up</button>
+            <button onClick={ signupButtonClicked }>Sign Up</button>
         </div>;
 }
 
