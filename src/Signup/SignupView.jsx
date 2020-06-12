@@ -1,5 +1,5 @@
 import React from "react";
-import cookieLogo from "./../resources/images/cookie-logo.png"
+import cookieLogo from "./../resources/images/cookie.png"
 import "./SignupView.css";
 import signup from "./../network-layer/signup-request"
 
@@ -27,7 +27,6 @@ function SignupView() {
     }
 
     async function signupButtonClicked() {
-        
         try {
             const response = await signup(firstName, lastName, email, password);
             console.log(response);
@@ -38,6 +37,8 @@ function SignupView() {
 
     return <div className="container">
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
+            <h1 className="title">Cookie</h1>
+            <h3 className="subtitle">Share and Discover Recipes</h3>
             <div className="fields-container">
                 <input onChange= { firstNameChanged } type="text" placeholder="First Name"/>
                 <hr/>

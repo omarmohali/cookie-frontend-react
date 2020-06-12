@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
 input {
     display: block;
@@ -24,7 +26,7 @@ button {
     height: 55px;
     border-radius: 27.5px;
     border: none;
-    background-color: #3BB435;
+    background-color: #5cdb5c;
     color: white;
     font-weight: bold;
     font-size: 16px;
@@ -44,15 +46,33 @@ hr {
 }
 
 .image {
-    height: 300px;
-    width: 300px;
+    margin-top: 40px;
+    height: 150px;
+    width: 150px;
 }
 
 .fields-container {
-    background-color: #EDEDED;
+    background-color: #F8F8F8;
     width: 350px;
     height: 210px;
     margin: auto;
     border-radius: 10px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+    font-family: 'Balsamiq Sans', cursive;
+    color: rgb(101, 66, 40);
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    color: rgb(101, 66, 40);
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 40px;
 }
 
