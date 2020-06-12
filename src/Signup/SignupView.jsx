@@ -1,4 +1,5 @@
 import React from "react";
+import validator from "validator";
 import cookieLogo from "./../resources/images/cookie.png"
 import "./SignupView.css";
 import signup from "./../network-layer/signup-request"
@@ -9,6 +10,9 @@ function SignupView() {
     var [lastName, setLastName] = React.useState("");
     var [email, setEmail] = React.useState("");
     var [password, setPassword] = React.useState("");
+    var [showFirstNameError, setShowFirstNameError] = React.useState(false);
+    var [showEmailError, setShowEmailError] = React.useState(false);
+    var [showPasswordError, setShowPasswordError] = React.useState(false);
 
     function firstNameChanged(event) {
         setFirstName(event.target.value)
@@ -27,12 +31,37 @@ function SignupView() {
     }
 
     async function signupButtonClicked() {
-        try {
-            const response = await signup(firstName, lastName, email, password);
-            console.log(response);
-        } catch (err) {
-            console.log(err.response.data);
+
+        showErrors()
+
+        if (areAllFieldsCorrectlySet()) {
+            try {
+                const response = await signup(firstName, lastName, email, password);
+                console.log(response);
+            } catch (err) {
+                
+                const statusCode = err.response.status;
+                if (statusCode == 400) {
+    
+                } else if (statusCode == 409) {
+    
+                } else {
+    
+                }
+                
+                console.log(err.response.data);
+            }
         }
+    }
+
+    function areAllFieldsCorrectlySet() {
+        return firstName && email && validator.isEmail(email) && password;
+    }
+
+    function showErrors() {
+        setShowFirstNameError(firstName ? false : true);
+        setShowEmailError(email && validator.isEmail(email) ? false : true);
+        setShowPasswordError(password ? false : true);
     }
 
     return <div className="container">
@@ -40,13 +69,19 @@ function SignupView() {
             <h1 className="title">Cookie</h1>
             <h3 className="subtitle">Share and Discover Recipes</h3>
             <div className="fields-container">
-                <input onChange= { firstNameChanged } type="text" placeholder="First Name"/>
+                <div className={showFirstNameError ? "field-error" : ""}>
+                    <input  onChange= { firstNameChanged } type="text" placeholder="First Name"/>
+                </div>
                 <hr/>
                 <input onChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
                 <hr/>
-                <input onChange= { emailChanged } type="email" placeholder="Email"/>
+                <div className={showEmailError ? "field-error" : ""}>
+                    <input onChange= { emailChanged } type="email" placeholder="Email"/>
+                </div>
                 <hr/>
-                <input onChange= { passwordChanged } type="password" placeholder="Password"/>
+                <div className={showPasswordError ? "field-error" : ""}>
+                    <input onChange= { passwordChanged } type="password" placeholder="Password"/>
+                </div>
             </div>
             <button onClick={ signupButtonClicked }>Sign Up</button>
         </div>;

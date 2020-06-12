@@ -11,6 +11,13 @@ input {
     border: none;
 }
 
+.field-error {
+    /* background-color: red; */
+    border: solid;
+    border-width: 1px;
+    border-color: red; 
+}
+
 input:focus {
     border: none;
     outline: none;
@@ -86,4 +93,3 @@ hr {
     margin-top: 0;
     margin-bottom: 40px;
 }
-
