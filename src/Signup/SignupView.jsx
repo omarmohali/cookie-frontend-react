@@ -13,6 +13,7 @@ function SignupView() {
     var [showFirstNameError, setShowFirstNameError] = React.useState(false);
     var [showEmailError, setShowEmailError] = React.useState(false);
     var [showPasswordError, setShowPasswordError] = React.useState(false);
+    var [buttonIsLoading, setButtonIsLoading] = React.useState(false);
 
     function firstNameChanged(event) {
         setFirstName(event.target.value)
@@ -35,11 +36,13 @@ function SignupView() {
         showErrors()
 
         if (areAllFieldsCorrectlySet()) {
+            setButtonIsLoading(true);
             try {
                 const response = await signup(firstName, lastName, email, password);
+                setButtonIsLoading(false);
                 console.log(response);
             } catch (err) {
-                
+                setButtonIsLoading(false);
                 const statusCode = err.response.status;
                 if (statusCode == 400) {
     
@@ -64,6 +67,15 @@ function SignupView() {
         setShowPasswordError(password ? false : true);
     }
 
+    function ButtonLoading(props) {
+        if (props.loading) {
+            return <i className={"fa fa-circle-o-notch fa-spin"}></i>;
+        }
+        else {
+            return <i />
+        }
+    }
+
     return <div className="container">
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <h1 className="title">Cookie</h1>
@@ -83,7 +95,7 @@ function SignupView() {
                     <input onChange= { passwordChanged } type="password" placeholder="Password"/>
                 </div>
             </div>
-            <button onClick={ signupButtonClicked }>Sign Up</button>
+            <button onClick={ signupButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign Up</button>
         </div>;
 }
 
