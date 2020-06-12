@@ -6,9 +6,18 @@ function fullUrl(path) {
     return baseUrl + path; 
 }
 
-async function post(path, body) {
-    var response = await axios.post(fullUrl(path), body);
-    return response;
+function post(path, body) {
+    
+    return new Promise( async (resolve, reject) => {
+        try {
+            var response = await axios.post(fullUrl(path), body);
+            resolve(response)
+        } catch (err) {
+            reject(err)
+        }
+
+    });
+    
 }
 
 export default post;

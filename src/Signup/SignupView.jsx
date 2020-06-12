@@ -26,8 +26,14 @@ function SignupView() {
         setPassword(event.target.value);
     }
 
-    function signupButtonClicked() {
-        signup(firstName, lastName, email, password);
+    async function signupButtonClicked() {
+        
+        try {
+            const response = await signup(firstName, lastName, email, password);
+            console.log(response);
+        } catch (err) {
+            console.log(err.response.data);
+        }
     }
 
     return <div className="container">
