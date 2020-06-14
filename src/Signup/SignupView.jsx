@@ -10,9 +10,9 @@ function SignupView() {
     var [lastName, setLastName] = React.useState("");
     var [email, setEmail] = React.useState("");
     var [password, setPassword] = React.useState("");
-    var [showFirstNameError, setShowFirstNameError] = React.useState(false);
-    var [showEmailError, setShowEmailError] = React.useState(false);
-    var [showPasswordError, setShowPasswordError] = React.useState(false);
+    var [firstNameError, setFirstNameError] = React.useState(null);
+    var [emailError, setEmailError] = React.useState(null);
+    var [passwordError, setPasswordError] = React.useState(null);
     var [buttonIsLoading, setButtonIsLoading] = React.useState(false);
 
     function firstNameChanged(event) {
@@ -58,13 +58,31 @@ function SignupView() {
     }
 
     function areAllFieldsCorrectlySet() {
-        return firstName && email && validator.isEmail(email) && password;
+        return firstName && email && validator.isEmail(email) && password && password.length > 7;
     }
 
     function showErrors() {
-        setShowFirstNameError(firstName ? false : true);
-        setShowEmailError(email && validator.isEmail(email) ? false : true);
-        setShowPasswordError(password ? false : true);
+        if (!firstName) {
+            setFirstNameError("Please enter your first name");
+        } else {
+            setFirstNameError(null);
+        }
+        
+        if (!email) {
+            setEmailError("Please enter your email address");
+        } else if (!validator.isEmail(email)) {
+            setEmailError("Please enter a valid email")
+        } else {
+            setEmailError(null);
+        }
+
+        if (!password) {
+            setPasswordError("Please enter your password");
+        } else if (password.length < 8) {
+            setPasswordError("Password length should be at least 8 character");
+        } else {
+            setPasswordError(null);
+        }
     }
 
     function ButtonLoading(props) {
@@ -80,10 +98,13 @@ function SignupView() {
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <h1 className="title">Cookie</h1>
             <h3 className="subtitle">Share and Discover Recipes</h3>
-            <input className={showFirstNameError ? "field-error" : ""} onChange= { firstNameChanged } type="text" placeholder="First Name"/>
+            <input className={firstNameError ? "field-error" : ""} onChange= { firstNameChanged } type="text" placeholder="First Name"/>
+            <p className={!firstNameError ? "" : "field-error-label"}>{firstNameError}</p>
             <input onChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
-            <input className={showEmailError ? "field-error" : ""} onChange= { emailChanged } type="email" placeholder="Email"/>
-            <input className={showPasswordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
+            <input className={emailError ? "field-error" : ""} onChange= { emailChanged } type="email" placeholder="Email"/>
+            <p className={!emailError ? "" : "field-error-label"}>{emailError}</p>
+            <input className={passwordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
+            <p className={!passwordError ? "" : "field-error-label"}>{passwordError}</p>
             <button onClick={ signupButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign Up</button>
         </div>;
 }
