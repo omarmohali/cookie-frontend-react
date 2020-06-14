@@ -1,0 +1,35 @@
+.nav-container {
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: gray;
+   
+}
+
+.nav-list {
+    text-align: right;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.nav-list-item {
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-list-item a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-list-item a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-list-item a:hover {
+    color: rgb(101, 66, 40);
+    text-decoration: none;
+}
