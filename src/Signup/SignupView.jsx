@@ -80,21 +80,10 @@ function SignupView() {
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <h1 className="title">Cookie</h1>
             <h3 className="subtitle">Share and Discover Recipes</h3>
-            <div className="fields-container">
-                <div className={showFirstNameError ? "field-error" : ""}>
-                    <input  onChange= { firstNameChanged } type="text" placeholder="First Name"/>
-                </div>
-                <hr/>
-                <input onChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
-                <hr/>
-                <div className={showEmailError ? "field-error" : ""}>
-                    <input onChange= { emailChanged } type="email" placeholder="Email"/>
-                </div>
-                <hr/>
-                <div className={showPasswordError ? "field-error" : ""}>
-                    <input onChange= { passwordChanged } type="password" placeholder="Password"/>
-                </div>
-            </div>
+            <input className={showFirstNameError ? "field-error" : ""} onChange= { firstNameChanged } type="text" placeholder="First Name"/>
+            <input onChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
+            <input className={showEmailError ? "field-error" : ""} onChange= { emailChanged } type="email" placeholder="Email"/>
+            <input className={showPasswordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
             <button onClick={ signupButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign Up</button>
         </div>;
 }
