@@ -47,7 +47,7 @@ function SignupView() {
                 if (statusCode == 400) {
     
                 } else if (statusCode == 409) {
-    
+                    setEmailError("This email is already taken");
                 } else {
     
                 }
