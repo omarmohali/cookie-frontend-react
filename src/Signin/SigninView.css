@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+input {
+    padding-left: 20px;
+    display: block;
+    height: 48px;
+    background: transparent;
+    font-size: 16px;
+    margin: 15px auto 0 auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    -webkit-appearance: none;
+}
+
+.field-error {
+    border: solid;
+    border-width: 1px;
+    border-color: red; 
+}
+
+.field-error-label {
+    color: red;
+    font-size: 14px;
+    width: 350px;
+    margin: 5px auto 0 auto;
+    text-align: left;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    color:#9BA1A3;
+}
+
+button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 180px;
+    height: 55px;
+    border-radius: 27.5px;
+    border: none;
+    background-color: #5cdb5c;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+   
+}
+
+button:active {
+    background-color: #4fbd4f;
+}
+
+button:hover {
+    /* background-color: red; */
+    cursor: pointer;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+}
+
+hr {
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.image {
+    margin-top: 40px;
+    height: 7.5em;
+    width: 7.5em;
+    /* height: 120px;
+    width: 120px; */
+}
+
+.fields-container {
+    background-color: #F8F8F8;
+    width: 350px;
+    height: 210px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+    font-family: 'Balsamiq Sans', cursive;
+    color: rgb(101, 66, 40);
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    color: rgb(101, 66, 40);
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 481px) {
+    input {
+        width: 350px;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    input {
+        width: 80%;
+    }
+
+    .subtitle {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .field-error-label {
+        width: 80%;
+    }
+}
