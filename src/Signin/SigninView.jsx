@@ -2,7 +2,7 @@ import React from "react";
 import validator from "validator";
 import cookieLogo from "./../resources/images/cookie.png"
 import "./SigninView.css";
-import signup from "./../network-layer/signup-request"
+import signin from "./../network-layer/signin-request"
 
 function SigninView() {
 
@@ -10,6 +10,7 @@ function SigninView() {
     var [password, setPassword] = React.useState("");
     var [emailError, setEmailError] = React.useState(null);
     var [passwordError, setPasswordError] = React.useState(null);
+    var [wrongCredentialsError, setWrongCredentialsError] = React.useState(null);
     var [buttonIsLoading, setButtonIsLoading] = React.useState(false);
 
     function emailChanged(event) {
@@ -27,29 +28,21 @@ function SigninView() {
         showErrors()
 
         if (areAllFieldsCorrectlySet()) {
-            console.log("Should sign in now");
-        }
-
-        // if (areAllFieldsCorrectlySet()) {
-        //     setButtonIsLoading(true);
-        //     try {
-        //         const response = await signup(firstName, lastName, email, password);
-        //         setButtonIsLoading(false);
-        //         console.log(response);
-        //     } catch (err) {
-        //         setButtonIsLoading(false);
-        //         const statusCode = err.response.status;
-        //         if (statusCode == 400) {
-    
-        //         } else if (statusCode == 409) {
-        //             setEmailError("This email is already taken");
-        //         } else {
-    
-        //         }
+            setButtonIsLoading(true);
+            try {
+                const response = await signin(email, password);
+                setButtonIsLoading(false);
+                console.log(response);
+            } catch (err) {
+                setButtonIsLoading(false);
+                const statusCode = err.response.status;
+                if (statusCode == 401) {
+                    setWrongCredentialsError("Wrong email or password");
+                }
                 
-        //         console.log(err.response.data);
-        //     }
-        // }
+                console.log(err.response.data);
+            }
+        }
     }
 
     function areAllFieldsCorrectlySet() {
@@ -88,6 +81,7 @@ function SigninView() {
             <input className={passwordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
             <p className={!passwordError ? "" : "field-error-label"}>{passwordError}</p>
             <button onClick={ signinButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign-In</button>
+            <p className={!wrongCredentialsError ? "" : "server-error-label"}>{wrongCredentialsError}</p>
         </div>;
 }
 

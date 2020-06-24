@@ -20,4 +20,4 @@ function post(path, body) {
     
 }
 
-export default post;
+export { post } ;

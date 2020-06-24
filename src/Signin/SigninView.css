@@ -28,6 +28,14 @@ input {
     text-align: left;
 }
 
+.server-error-label {
+    color: red;
+    font-size: 14px;
+    width: 350px;
+    margin: 5px auto 0 auto;
+    text-align: center;
+}
+
 input:focus {
     border: none;
     outline: none;
