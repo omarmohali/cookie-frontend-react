@@ -44,9 +44,9 @@ function SignupView() {
             } catch (err) {
                 setButtonIsLoading(false);
                 const statusCode = err.response.status;
-                if (statusCode == 400) {
+                if (statusCode === 400) {
     
-                } else if (statusCode == 409) {
+                } else if (statusCode === 409) {
                     setEmailError("This email is already taken");
                 } else {
     

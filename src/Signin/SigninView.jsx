@@ -1,5 +1,4 @@
 import React from "react";
-import validator from "validator";
 import cookieLogo from "./../resources/images/cookie.png"
 import "./SigninView.css";
 import signin from "./../network-layer/signin-request"
@@ -36,7 +35,7 @@ function SigninView() {
             } catch (err) {
                 setButtonIsLoading(false);
                 const statusCode = err.response.status;
-                if (statusCode == 401) {
+                if (statusCode === 401) {
                     setWrongCredentialsError("Wrong email or password");
                 }
                 
