@@ -23,10 +23,10 @@ function RecipeCard(props) {
         <img className="recipe-image" src={fullImageUrl} alt={recipe.title}/>
         <div className="image-gradient"></div>
         <h2 className="likes-count">{recipe.likesCount} <i className="fa fa-heart" aria-hidden="true"></i></h2>
-        <h3 className="recipe-title">{recipe.title} </h3>
+        <h4 className="recipe-title">{recipe.title} </h4>
         <Tags tags={recipe.tags}/>
         <img className="user-profile-image" src={fullProfileImageUrl} alt={recipe.user.firstName}/>
-        <h4 className="user-name">{recipe.user.firstName + " " + recipe.user.lastName}</h4>
+        <h5 className="user-name">{recipe.user.firstName + " " + recipe.user.lastName}</h5>
     </div>;
 }
 

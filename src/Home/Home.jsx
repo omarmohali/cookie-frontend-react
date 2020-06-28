@@ -28,28 +28,19 @@ function Home() {
 
             return <Container>
                 <Row>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginTop: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
                 </Row>
             </Container>
-
-            // return <div style={{textAlign: "center", marginLeft: "auto", marginRight: "auto"}}>
-            //     <RecipeCard recipe={recipes[0]}/>
-            //     <RecipeCard recipe={recipes[0]}/>
-            //     <RecipeCard recipe={recipes[0]}/>
-            //     <RecipeCard recipe={recipes[0]}/>
-            //     <RecipeCard recipe={recipes[0]}/>
-            //     <RecipeCard recipe={recipes[0]}/>
-            // </div>;
         } else {
             return <div />;
         }

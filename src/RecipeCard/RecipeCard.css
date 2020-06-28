@@ -30,7 +30,7 @@
 .recipe-title {
     position: absolute;
     left: 20px;
-    bottom: 70px;
+    bottom: 80px;
     color: white;
     font-family: 'Playfair Display', serif;
 }
@@ -47,7 +47,7 @@
 .tags {
     position: absolute;
     left: 20px;
-    bottom: 55px;
+    bottom: 50px;
 }
 
 .tag {
