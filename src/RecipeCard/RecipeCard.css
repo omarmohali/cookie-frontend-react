@@ -1,0 +1,89 @@
+
+.card {
+    border-radius: 5px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    width: 300px;
+    height: 280px;
+    position: relative;
+} 
+
+.recipe-image {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 5px 5px 0 0;
+}
+
+.image-gradient {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    opacity: 0.7;
+    background-image: linear-gradient(transparent, black);
+}
+
+.recipe-title {
+    position: absolute;
+    left: 20px;
+    bottom: 70px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.likes-count {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-family: 'Balsamiq Sans', cursive;
+    /* color:#fc5656; */
+    color: white;
+}
+
+.tags {
+    position: absolute;
+    left: 20px;
+    bottom: 55px;
+}
+
+.tag {
+    display: inline;
+    margin: 10px;
+    font-size: 0.8em;
+    padding: 0;
+    color: white;
+    font-family: sans-serif;
+}
+
+.tag-container {
+    /* border: solid; */
+    /* border-width: 1px; */
+    /* border-color: black; */
+    background-color: black;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.user-profile-image {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    left: 20px;
+    bottom: 10px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.user-name {
+    position: absolute;
+    margin: 0;
+    left: 70px;
+    bottom: 18px;
+    font-family: sans-serif;
+}

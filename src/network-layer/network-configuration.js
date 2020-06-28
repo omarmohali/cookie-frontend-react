@@ -6,6 +6,19 @@ function fullUrl(path) {
     return baseUrl + path; 
 }
 
+function get(path, query) {
+
+    return new Promise( async (resolve, reject) => {
+        try {
+            var response = await axios.get(fullUrl(path));
+            resolve(response);
+        } catch (err) {
+            reject(err);
+        }
+    });
+
+}
+
 function post(path, body) {
     
     return new Promise( async (resolve, reject) => {
@@ -20,4 +33,4 @@ function post(path, body) {
     
 }
 
-export { post } ;
+export { fullUrl , get, post } ;
