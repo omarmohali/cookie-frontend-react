@@ -23,13 +23,17 @@ function Home() {
         fetchRecipes()
     }
 
+    function didClickOnRecipe(recipe) {
+        console.log(recipe);
+    }
+
     function RecipeCards() {
         if (recipes) {
 
             return <Container>
                 <Row> {
                     recipes.map((recipe) => {
-                        return <Col key={recipe._id} style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipe}/></Col>
+                        return <Col key={recipe._id} onClick={() => didClickOnRecipe(recipe)} style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipe}/></Col>
                     })
                 }
                 </Row>
