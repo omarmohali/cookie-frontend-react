@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 
+
 function App() {
+
   return (
     <BrowserRouter>
         <NavigationBar />
@@ -15,7 +17,6 @@ function App() {
         <Route path="/signup" component={SignupView}/>
         <Route path="/signin" component={SigninView}/>
     </BrowserRouter>
-
   );
 }
 
