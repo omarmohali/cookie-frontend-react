@@ -11,7 +11,7 @@ function RecipeCard(props) {
         const tags = props.tags;
         var tagsList = [];
         for (var i = 0; i < tags.length; i++) {
-        tagsList.push(<span className="tag-container"><p className="tag">{tags[i]}</p></span>)
+        tagsList.push(<span key={i} className="tag-container"><p className="tag">{tags[i]}</p></span>)
         }
         return <div className="tags">
             {tagsList}

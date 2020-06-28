@@ -27,18 +27,11 @@ function Home() {
         if (recipes) {
 
             return <Container>
-                <Row>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
-                    <Col style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipes[0]}/></Col>
+                <Row> {
+                    recipes.map((recipe) => {
+                        return <Col key={recipe._id} style={{marginBottom: "30px"}} xs={12} sm={6} md={6} lg={4} xl={3}><RecipeCard recipe={recipe}/></Col>
+                    })
+                }
                 </Row>
             </Container>
         } else {
