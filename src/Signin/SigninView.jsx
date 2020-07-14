@@ -2,9 +2,10 @@ import React from "react";
 import cookieLogo from "./../resources/images/cookie.png"
 import "./SigninView.css";
 import signin from "./../network-layer/signin-request"
+import { connect } from 'react-redux'
 
-function SigninView() {
-
+function SigninView(props) {
+    console.log(props.signinAction);
     var [email, setEmail] = React.useState("");
     var [password, setPassword] = React.useState("");
     var [emailError, setEmailError] = React.useState(null);
@@ -21,18 +22,20 @@ function SigninView() {
     }
 
     async function signinButtonClicked() {
-
         
-
         showErrors()
-
         if (areAllFieldsCorrectlySet()) {
             setButtonIsLoading(true);
             try {
                 const response = await signin(email, password);
-                setButtonIsLoading(false);
                 console.log(response);
+                console.log("nfindidnidn");
+                setButtonIsLoading(false);
+                props.signinAction();
+                console.log(response);
+                
             } catch (err) {
+                console.log("nfindidnidn");
                 setButtonIsLoading(false);
                 const statusCode = err.response.status;
                 if (statusCode === 401) {
@@ -65,12 +68,10 @@ function SigninView() {
     function ButtonLoading(props) {
         if (props.loading) {
             return <i className={"fa fa-circle-o-notch fa-spin"}></i>;
-        }
-        else {
+        } else {
             return <i />
         }
     }
-
     return <div className="container">
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <h1 className="title">Cookie</h1>
@@ -84,4 +85,11 @@ function SigninView() {
         </div>;
 }
 
-export default SigninView;
+const signinAction = content => ({
+  type: "LOGIN",
+});
+
+export default connect(
+    null,
+    { signinAction }
+  )(SigninView);
