@@ -9,6 +9,10 @@ import { connect } from "react-redux";
 function NavigationBar(props) {
     console.log(props);
 
+    function signout() {
+        console.loo("Did click on logout");
+    }
+
     function SignedInList() {
         return <ul className="nav-list">
             <li className={"nav-list-item"}><a href="/home">Home</a></li>
@@ -21,7 +25,7 @@ function NavigationBar(props) {
         return <ul className="nav-list">
             <li className={"nav-list-item"}><a href="/home">Home</a></li>
             <li className={"nav-list-item"}><a href="/signin">Sign in</a></li>
-            <li className={"nav-list-item"}><a href="/signup">Sign up</a></li>
+            <li className={"nav-list-item"}><a onClick={signout} href="">Sign up</a></li>
         </ul>
     }
 

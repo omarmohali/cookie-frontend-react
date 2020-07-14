@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 function SigninView(props) {
     console.log(props.signinAction);
+    // props.signinAction()
     var [email, setEmail] = React.useState("");
     var [password, setPassword] = React.useState("");
     var [emailError, setEmailError] = React.useState(null);
