@@ -20,17 +20,18 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     if (action.type === "LOGIN") {
+        console.log("Root Reducer was called with login");
         var newState = Object.assign({}, state, {
             isUserLoggedIn: true
         });
         return newState;
     } else if (action.type === "LOGOUT") {
+        console.log("Root Reducer was called with logout");
         var newState = Object.assign({}, state, {
             isUserLoggedIn: false
         });
         return newState;
     }
-
     return state;
 }
 

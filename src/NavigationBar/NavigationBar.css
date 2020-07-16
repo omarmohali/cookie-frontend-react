@@ -11,12 +11,20 @@
     font-weight: 600;
 }
 
-.nav-list-item {
+.nav-list-item, .nav-list-item button {
     display: inline-block;
     margin: 0 20px 0 20px;
     font-family: sans-serif;
     text-decoration: none;
     font-size: 18px;
+}
+
+.nav-list-item button {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    
 }
 
 .nav-list-item a {
@@ -30,6 +38,11 @@
 }
 
 .nav-list-item a:hover {
+    color: rgb(101, 66, 40);
+    text-decoration: none;
+}
+
+.nav-list-item button:hover {
     color: rgb(101, 66, 40);
     text-decoration: none;
 }

@@ -5,8 +5,6 @@ import signin from "./../network-layer/signin-request"
 import { connect } from 'react-redux'
 
 function SigninView(props) {
-    console.log(props.signinAction);
-    // props.signinAction()
     var [email, setEmail] = React.useState("");
     var [password, setPassword] = React.useState("");
     var [emailError, setEmailError] = React.useState(null);
@@ -29,21 +27,15 @@ function SigninView(props) {
             setButtonIsLoading(true);
             try {
                 const response = await signin(email, password);
-                console.log(response);
-                console.log("nfindidnidn");
                 setButtonIsLoading(false);
+                console.log(props.signinAction)
                 props.signinAction();
-                console.log(response);
-                
             } catch (err) {
-                console.log("nfindidnidn");
                 setButtonIsLoading(false);
                 const statusCode = err.response.status;
                 if (statusCode === 401) {
                     setWrongCredentialsError("Wrong email or password");
                 }
-                
-                console.log(err.response.data);
             }
         }
     }
@@ -81,7 +73,7 @@ function SigninView(props) {
             <p className={!emailError ? "" : "field-error-label"}>{emailError}</p>
             <input className={passwordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
             <p className={!passwordError ? "" : "field-error-label"}>{passwordError}</p>
-            <button onClick={ signinButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign-In</button>
+            <button className="signin-button" onClick={ signinButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign-In</button>
             <p className={!wrongCredentialsError ? "" : "server-error-label"}>{wrongCredentialsError}</p>
         </div>;
 }

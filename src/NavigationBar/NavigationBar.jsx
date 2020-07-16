@@ -2,22 +2,19 @@ import React from "react";
 import "./NavigationBar.css";
 import { connect } from "react-redux";
 
-
-// Logged in: signout, profile, home
-// Logged out: signin, sign up, home
-
 function NavigationBar(props) {
-    console.log(props);
-
+    console.log("Hello");
+    console.log(props.signoutAction);
     function signout() {
-        console.loo("Did click on logout");
+        props.signoutAction();
     }
 
     function SignedInList() {
         return <ul className="nav-list">
             <li className={"nav-list-item"}><a href="/home">Home</a></li>
             <li className={"nav-list-item"}><a href="">Profile</a></li>
-            <li className={"nav-list-item"}><a href="">Sign out</a></li>     
+            <li className={"nav-list-item"}><button onClick={signout}>Sign out</button></li> 
+            {/* <li className={"nav-list-item"}><a href="">Sign out</a></li>      */}
         </ul>
     }
 
@@ -34,16 +31,18 @@ function NavigationBar(props) {
     </div>
 }
 
+const signoutAction = content => ({
+    type: "LOGOUT",
+});
+
 const mapStateToProps = state => {
-    console.log("State has changed");
-    console.log(state);
-    return { isUserLoggedIn: state.isUserLoggedIn };
-    // const { byIds, allIds } = state.todos || {};
-    // const todos =
-    //   allIds && allIds.length
-    //     ? allIds.map(id => (byIds ? { ...byIds[id], id } : null))
-    //     : null;
-    // return { todos };
+    return { 
+        isUserLoggedIn: state.isUserLoggedIn
+    };
   };
 
-export default connect(mapStateToProps)(NavigationBar);
+const mapDispatchToProps = {
+    signoutAction: signoutAction
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);

@@ -13,11 +13,18 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-    if (action.type === "LOGIN") {
-        var newState = Object.assign({}, state, {
-            isUserLoggedIn: true
-        });
-        return newState;
+    
+    switch (action.type) {
+        case "LOGIN":
+            var newState = Object.assign({}, state, {
+                isUserLoggedIn: true
+            });
+            return newState;
+        case "LOGOUT":
+            var newState = Object.assign({}, state, {
+                isUserLoggedIn: false
+            });
+            return newState;
     }
 
     return state;

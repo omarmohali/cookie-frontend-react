@@ -105,7 +105,7 @@ function SignupView() {
             <p className={!emailError ? "" : "field-error-label"}>{emailError}</p>
             <input className={passwordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
             <p className={!passwordError ? "" : "field-error-label"}>{passwordError}</p>
-            <button onClick={ signupButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign Up</button>
+            <button className="signup-button" onClick={ signupButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign Up</button>
         </div>;
 }
 

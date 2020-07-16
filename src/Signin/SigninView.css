@@ -45,7 +45,7 @@ input::placeholder {
     color:#9BA1A3;
 }
 
-button {
+.signin-button {
     margin-top: 25px;
     margin-bottom: 25px;
     width: 180px;
@@ -58,17 +58,17 @@ button {
     font-size: 16px;
 }
 
-button:focus {
+.signin-button:focus {
     border: none;
     outline: none;
    
 }
 
-button:active {
+.signin-button:active {
     background-color: #4fbd4f;
 }
 
-button:hover {
+.signin-button:hover {
     /* background-color: red; */
     cursor: pointer;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);

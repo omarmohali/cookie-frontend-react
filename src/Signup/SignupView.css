@@ -37,7 +37,7 @@ input::placeholder {
     color:#9BA1A3;
 }
 
-button {
+.signup-button {
     margin-top: 25px;
     margin-bottom: 25px;
     width: 180px;
@@ -50,17 +50,17 @@ button {
     font-size: 16px;
 }
 
-button:focus {
+.signup-button:focus {
     border: none;
     outline: none;
    
 }
 
-button:active {
+.signup-button:active {
     background-color: #4fbd4f;
 }
 
-button:hover {
+.signup-button:hover {
     /* background-color: red; */
     cursor: pointer;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
