@@ -1,5 +1,5 @@
 import React from "react";
-import RecipeCard from "../../../RecipeCard/RecipeCard";
+import RecipeCard from "../../Reusable/RecipeCard/RecipeCard";
 import getRecipes from "../../../network-layer/get-recipes-request";
 import "./Home.css";
 import Container from 'react-bootstrap/Container';

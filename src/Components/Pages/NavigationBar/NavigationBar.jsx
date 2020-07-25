@@ -10,11 +10,12 @@ function NavigationBar(props) {
     }
 
     function SignedInList() {
+        console.log("Rerender nav list")
         return <ul className="nav-list">
             <li className={"nav-list-item"}><a href="/home">Home</a></li>
+            <li className={"nav-list-item"}><a href="/add-recipe">Add Recipe</a></li>
             <li className={"nav-list-item"}><a href="">Profile</a></li>
-            <li className={"nav-list-item"}><button onClick={signout}>Sign out</button></li> 
-            {/* <li className={"nav-list-item"}><a href="">Sign out</a></li>      */}
+            <li className={"nav-list-item"}><button onClick={signout}>Sign out</button></li>
         </ul>
     }
 

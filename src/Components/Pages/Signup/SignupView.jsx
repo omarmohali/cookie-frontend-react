@@ -1,8 +1,8 @@
 import React from "react";
 import validator from "validator";
-import cookieLogo from "./../resources/images/cookie.png"
+import cookieLogo from "./../../../resources/images/cookie.png"
 import "./SignupView.css";
-import signup from "./../network-layer/signup-request";
+import signup from "../../../network-layer/signup-request";
 import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
 

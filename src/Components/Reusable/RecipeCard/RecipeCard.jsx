@@ -1,5 +1,5 @@
 import React from "react";
-import { fullUrl } from "./../network-layer/network-configuration";
+import { fullUrl } from "./../../../network-layer/network-configuration";
 import "./RecipeCard.css";
 
 function RecipeCard(props) {

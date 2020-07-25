@@ -1,7 +1,7 @@
 import React from "react";
-import cookieLogo from "./../resources/images/cookie.png"
+import cookieLogo from "./../../../resources/images/cookie.png"
 import "./SigninView.css";
-import signin from "./../network-layer/signin-request"
+import signin from "../../../network-layer/signin-request"
 import { connect } from 'react-redux'
 import { useHistory } from "react-router-dom";
 
