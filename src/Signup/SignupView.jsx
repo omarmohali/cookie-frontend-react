@@ -2,9 +2,11 @@ import React from "react";
 import validator from "validator";
 import cookieLogo from "./../resources/images/cookie.png"
 import "./SignupView.css";
-import signup from "./../network-layer/signup-request"
+import signup from "./../network-layer/signup-request";
+import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
-function SignupView() {
+function SignupView(props) {
 
     var [firstName, setFirstName] = React.useState("");
     var [lastName, setLastName] = React.useState("");
@@ -14,6 +16,8 @@ function SignupView() {
     var [emailError, setEmailError] = React.useState(null);
     var [passwordError, setPasswordError] = React.useState(null);
     var [buttonIsLoading, setButtonIsLoading] = React.useState(false);
+
+    let history = useHistory();
 
     function firstNameChanged(event) {
         setFirstName(event.target.value)
@@ -40,7 +44,8 @@ function SignupView() {
             try {
                 const response = await signup(firstName, lastName, email, password);
                 setButtonIsLoading(false);
-                console.log(response);
+                props.signupAction();
+                history.push("/home");
             } catch (err) {
                 setButtonIsLoading(false);
                 const statusCode = err.response.status;
@@ -109,4 +114,11 @@ function SignupView() {
         </div>;
 }
 
-export default SignupView;
+const signupAction = content => ({
+    type: "LOGIN",
+  });
+  
+  export default connect(
+      null,
+      { signupAction }
+    )(SignupView);

@@ -3,6 +3,7 @@ import cookieLogo from "./../resources/images/cookie.png"
 import "./SigninView.css";
 import signin from "./../network-layer/signin-request"
 import { connect } from 'react-redux'
+import { useHistory } from "react-router-dom";
 
 function SigninView(props) {
     var [email, setEmail] = React.useState("");
@@ -11,6 +12,10 @@ function SigninView(props) {
     var [passwordError, setPasswordError] = React.useState(null);
     var [wrongCredentialsError, setWrongCredentialsError] = React.useState(null);
     var [buttonIsLoading, setButtonIsLoading] = React.useState(false);
+
+    
+    let history = useHistory();
+    
 
     function emailChanged(event) {
         setEmail(event.target.value);
@@ -30,11 +35,15 @@ function SigninView(props) {
                 setButtonIsLoading(false);
                 console.log(props.signinAction)
                 props.signinAction();
+                history.push("/home");
+
             } catch (err) {
                 setButtonIsLoading(false);
-                const statusCode = err.response.status;
-                if (statusCode === 401) {
-                    setWrongCredentialsError("Wrong email or password");
+                if (err.response) {
+                    const statusCode = err.response.status;
+                    if (statusCode === 401) {
+                        setWrongCredentialsError("Wrong email or password");
+                    }
                 }
             }
         }
