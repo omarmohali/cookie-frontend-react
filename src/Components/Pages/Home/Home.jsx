@@ -1,6 +1,6 @@
 import React from "react";
-import RecipeCard from "./../RecipeCard/RecipeCard";
-import getRecipes from "./../network-layer/get-recipes-request";
+import RecipeCard from "../../../RecipeCard/RecipeCard";
+import getRecipes from "../../../network-layer/get-recipes-request";
 import "./Home.css";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
