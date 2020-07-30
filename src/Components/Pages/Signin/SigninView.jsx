@@ -78,9 +78,9 @@ function SigninView(props) {
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <h1 className="title">Cookie</h1>
             <h3 className="subtitle">Share and Discover Recipes</h3>
-            <input className={emailError ? "field-error" : ""} onChange= { emailChanged } type="email" placeholder="Email"/>
+            <input className={emailError ? "textField-SigninView field-error" : "textField-SigninView"} onChange= { emailChanged } type="email" placeholder="Email"/>
             <p className={!emailError ? "" : "field-error-label"}>{emailError}</p>
-            <input className={passwordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
+            <input className={passwordError ? "textField-SigninView field-error" : "textField-SigninView"} onChange= { passwordChanged } type="password" placeholder="Password"/>
             <p className={!passwordError ? "" : "field-error-label"}>{passwordError}</p>
             <button className="signin-button" onClick={ signinButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign-In</button>
             <p className={!wrongCredentialsError ? "" : "server-error-label"}>{wrongCredentialsError}</p>

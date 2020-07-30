@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
-input {
+.textField-SignupView {
     padding-left: 20px;
     display: block;
     height: 48px;
@@ -28,12 +28,12 @@ input {
     text-align: left;
 }
 
-input:focus {
+.textField-SignupView:focus {
     border: none;
     outline: none;
 }
 
-input::placeholder {
+.textField-SignupView::placeholder {
     color:#9BA1A3;
 }
 
@@ -78,8 +78,6 @@ hr {
     margin-top: 40px;
     height: 7.5em;
     width: 7.5em;
-    /* height: 120px;
-    width: 120px; */
 }
 
 .fields-container {
@@ -110,14 +108,14 @@ hr {
 
 /* Desktop */
 @media only screen and (min-width: 481px) {
-    input {
+    .textField-SignupView {
         width: 350px;
     }
 }
 
 /* mobile */
 @media only screen and (max-width: 480px) {
-    input {
+    .textField-SignupView {
         width: 80%;
     }
 

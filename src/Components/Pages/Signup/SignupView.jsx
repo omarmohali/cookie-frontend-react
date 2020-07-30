@@ -103,12 +103,12 @@ function SignupView(props) {
             <img className="image" src={cookieLogo} alt="cookie-logo"/>
             <h1 className="title">Cookie</h1>
             <h3 className="subtitle">Share and Discover Recipes</h3>
-            <input className={firstNameError ? "field-error" : ""} onChange= { firstNameChanged } type="text" placeholder="First Name"/>
+            <input className={firstNameError ? "textField-SignupView field-error" : "textField-SignupView"} onChange= { firstNameChanged } type="text" placeholder="First Name"/>
             <p className={!firstNameError ? "" : "field-error-label"}>{firstNameError}</p>
-            <input onChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
-            <input className={emailError ? "field-error" : ""} onChange= { emailChanged } type="email" placeholder="Email"/>
+            <input className={"textField-SignupView"} nChange= { lastNameChanged } type="text" placeholder="Last Name (Optional)"/>
+            <input className={emailError ? "textField-SignupView field-error" : "textField-SignupView"} onChange= { emailChanged } type="email" placeholder="Email"/>
             <p className={!emailError ? "" : "field-error-label"}>{emailError}</p>
-            <input className={passwordError ? "field-error" : ""} onChange= { passwordChanged } type="password" placeholder="Password"/>
+            <input className={passwordError ? "textField-SignupView field-error" : "textField-SignupView"} onChange= { passwordChanged } type="password" placeholder="Password"/>
             <p className={!passwordError ? "" : "field-error-label"}>{passwordError}</p>
             <button className="signup-button" onClick={ signupButtonClicked }><ButtonLoading loading={buttonIsLoading}/>Sign Up</button>
         </div>;
